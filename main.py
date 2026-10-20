@@ -10,8 +10,19 @@ def exibir_menu():
 def cadastrar_chamado():
     print("\n--- ABERTURA DE CHAMADO ---")
 
-    titulo = input("Insira o título do problema: ")
-    descricao = input("Descreva o seu problema: ")
+    
+    titulo = input("Insira o título do problema: ").strip()
+
+    if not titulo:
+        print("Erro: o título não pode ficar vazio!")
+        return
+
+    descricao = input("Descreva o problema: ").strip()
+    
+    if not descricao:
+        print("Erro: a descrição do problema não pode ficar vazia!")
+        return
+
 
     novo_id = len(chamados) + 1
 
